@@ -1,0 +1,196 @@
+[
+  {
+    "_id": { "$oid": "67c9a1b2c3d4e5f6a7b8c9d0" },
+    "version_id": 1,
+    "active": true,
+    "column": [
+      {
+        "key": "batch_id",
+        "type": "string",
+        "required": true,
+        "description": "Mã lô nuôi cấy"
+      },
+      {
+        "key": "OD680",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 5,
+        "description": "Mật độ quang - chỉ số sinh khối"
+      },
+      {
+        "key": "pH",
+        "type": "number",
+        "required": true,
+        "min": 6,
+        "max": 14,
+        "description": "Độ pH của môi trường"
+      },
+      {
+        "key": "temperature_C",
+        "type": "number",
+        "required": true,
+        "min": 10,
+        "max": 45,
+        "description": "Nhiệt độ nước (°C)"
+      },
+      {
+        "key": "light_lux",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 200000,
+        "description": "Cường độ ánh sáng (lux)"
+      },
+      {
+        "key": "EC_uS",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 20000,
+        "description": "Độ dẫn điện (µS/cm) - chỉ số dinh dưỡng"
+      },
+      {
+        "key": "contamination_flag",
+        "type": "boolean",
+        "required": true,
+        "description": "Cờ báo nhiễm khuẩn"
+      },
+      {
+        "key": "DO_mgL",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 20,
+        "description": "Oxy hòa tan (mg/L)"
+      },
+      {
+        "key": "salinity_ppt",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 5,
+        "description": "Độ mặn (ppt)"
+      },
+      {
+        "key": "NO3_mgL",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 200,
+        "description": "Nitrat (mg/L)"
+      },
+      {
+        "key": "PO4_mgL",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 50,
+        "description": "Phosphate (mg/L)"
+      },
+      {
+        "key": "Mg_mgL",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 100,
+        "description": "Magiê (mg/L)"
+      },
+      {
+        "key": "K_mgL",
+        "type": "number",
+        "required": false,
+        "min": 0,
+        "max": 500,
+        "description": "Kali (mg/L)"
+      }
+    ],
+    "thresholds": {
+      "OD680": { "min": 0.5, "max": 3.0, "optimalMin": 1.0, "optimalMax": 2.5 },
+      "pH": { "min": 8.0, "max": 10.0, "optimalMin": 8.5, "optimalMax": 9.5 },
+      "temperature_C": { "min": 25.0, "max": 35.0, "optimalMin": 28.0, "optimalMax": 32.0 },
+      "light_lux": { "min": 5000, "max": 50000, "optimalMin": 15000, "optimalMax": 35000 },
+      "EC_uS": { "min": 1000, "max": 8000, "optimalMin": 2500, "optimalMax": 5000 },
+      "DO_mgL": { "min": 4.0, "max": 10.0, "optimalMin": 5.0, "optimalMax": 8.0 },
+      "salinity_ppt": { "min": 1.0, "max": 2.0, "optimalMin": 1.2, "optimalMax": 1.8 },
+      "NO3_mgL": { "min": 10, "max": 100, "optimalMin": 30, "optimalMax": 70 },
+      "PO4_mgL": { "min": 1, "max": 20, "optimalMin": 5, "optimalMax": 15 },
+      "Mg_mgL": { "min": 5, "max": 50, "optimalMin": 15, "optimalMax": 35 },
+      "K_mgL": { "min": 50, "max": 300, "optimalMin": 100, "optimalMax": 250 }
+    },
+    "description": "Định nghĩa cảm biến cho hệ thống nuôi cấy tảo Spirulina - Version 1",
+    "createdAt": "2025-09-19T13:13:18.003Z",
+    "updatedAt": "2025-09-19T13:13:18.003Z",
+    "__v": 0
+  },
+  {
+    "_id": { "$oid": "67c9a1b2c3d4e5f6a7b8c9d1" },
+    "version_id": 2,
+    "active": false,
+    "column": [
+      {
+        "key": "batch_id",
+        "type": "string",
+        "required": true,
+        "description": "Mã lô nuôi cấy"
+      },
+      {
+        "key": "OD680",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 5,
+        "description": "Mật độ quang - chỉ số sinh khối"
+      },
+      {
+        "key": "pH",
+        "type": "number",
+        "required": true,
+        "min": 6,
+        "max": 14,
+        "description": "Độ pH của môi trường"
+      },
+      {
+        "key": "temperature_C",
+        "type": "number",
+        "required": true,
+        "min": 10,
+        "max": 45,
+        "description": "Nhiệt độ nước (°C)"
+      },
+      {
+        "key": "light_lux",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 200000,
+        "description": "Cường độ ánh sáng (lux)"
+      },
+      {
+        "key": "EC_uS",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 20000,
+        "description": "Độ dẫn điện (µS/cm)"
+      },
+      {
+        "key": "contamination_flag",
+        "type": "boolean",
+        "required": true,
+        "description": "Cờ báo nhiễm khuẩn"
+      }
+    ],
+    "thresholds": {
+      "OD680": { "min": 0.5, "max": 3.0, "optimalMin": 1.0, "optimalMax": 2.5 },
+      "pH": { "min": 8.0, "max": 10.0, "optimalMin": 8.5, "optimalMax": 9.5 },
+      "temperature_C": { "min": 25.0, "max": 35.0, "optimalMin": 28.0, "optimalMax": 32.0 },
+      "light_lux": { "min": 5000, "max": 50000, "optimalMin": 15000, "optimalMax": 35000 },
+      "EC_uS": { "min": 1000, "max": 8000, "optimalMin": 2500, "optimalMax": 5000 }
+    },
+    "description": "Định nghĩa cảm biến cơ bản - Version 2",
+    "createdAt": "2025-09-20T10:00:00.000Z",
+    "updatedAt": "2025-09-20T10:00:00.000Z",
+    "__v": 0
+  }
+]
