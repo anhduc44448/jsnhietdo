@@ -9,37 +9,20 @@ const ColumnSchema = new mongoose.Schema(
       required: true,
     },
     required: { type: Boolean, default: false },
-    min: { type: Number },
-    max: { type: Number },
-    description: { type: String },
-    enum: { type: Array, default: [] },
+    min: { type: Number, default: null },
+    max: { type: Number, default: null },
+    enum: { type: [mongoose.Schema.Types.Mixed] },
   },
   { _id: false },
 );
 
 const DefinitionSchema = new mongoose.Schema(
   {
-    version_id: { type: Number, required: true, unique: true }, // unique đã tạo index
-    active: { type: Boolean, default: true },
-    column: { type: [ColumnSchema], required: true },
-    thresholds: {
-      type: Map,
-      of: {
-        min: Number,
-        max: Number,
-        optimalMin: Number,
-        optimalMax: Number,
-      },
-      default: {},
-    },
-    description: { type: String },
+    version_id: { type: String, required: true, unique: true, index: true },
+    colums: { type: [ColumnSchema], default: [] },
+    active: { type: Boolean, default: false },
   },
-  {
-    timestamps: true,
-    collection: "definitions",
-  },
+  { timestamps: true },
 );
 
-const Definition = mongoose.model("Definition", DefinitionSchema);
-
-export default Definition;
+export const Definition = mongoose.model("Definition", DefinitionSchema);

@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const ValueKVSchema = new mongoose.Schema(
+const ValueVSchema = new mongoose.Schema(
   {
     key: { type: String, required: true },
     value: { type: mongoose.Schema.Types.Mixed, required: true },
@@ -16,20 +16,10 @@ const RecordSchema = new mongoose.Schema(
       required: true,
       index: true,
     },
-    values: { type: [ValueKVSchema], default: [] },
-    created_date: { type: Date, default: Date.now, index: true },
-    avg: { type: Number, default: 0 },
+    values: { type: [ValueVSchema], default: [] },
+    createdAt: { type: Date, default: Date.now, index: true },
   },
-  {
-    timestamps: false,
-    collection: "records",
-  },
+  { timestamps: true },
 );
 
-// Index cho việc query thường xuyên
-RecordSchema.index({ definition_id: 1, created_date: -1 });
-RecordSchema.index({ "values.key": 1 });
-
-const Record = mongoose.model("Record", RecordSchema);
-
-export default Record;
+export const Record = mongoose.model("Record", RecordSchema);
