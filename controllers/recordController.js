@@ -1,4 +1,4 @@
-import { Record } from "../models/record.js";
+import { Record } from "../models/records.js";
 
 export const getAllRecords = async (req, res) => {
   try {
@@ -14,7 +14,7 @@ export const getAllRecords = async (req, res) => {
   }
 };
 
-export const deleteRecords = async (req, res) => {
+export const deleteRecordsByDefId = async (req, res) => {
   try {
     const { definitions_id } = req.params;
 

@@ -6,8 +6,28 @@ import {
 
 const router = express.Router();
 
-router.get("/definitions", getDefinitions);
+/**
+ * @swagger
+ * /api/sensors/definitions:
+ *   get:
+ *     summary: Lấy tất cả definitions
+ *     tags: [Definitions]
+ *     responses:
+ *       200:
+ *         description: Danh sách definitions
+ */
+router.get("/", getDefinitions);
 
-router.get("/definitions/active", getActiveDefinition);
+/**
+ * @swagger
+ * /api/sensors/definitions/active:
+ *   get:
+ *     summary: Lấy definition đang active
+ *     tags: [Definitions]
+ *     responses:
+ *       200:
+ *         description: Definition active
+ */
+router.get("/active", getActiveDefinition);
 
 export default router;

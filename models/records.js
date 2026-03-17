@@ -17,7 +17,7 @@ const RecordSchema = new mongoose.Schema(
       index: true,
     },
     values: { type: [ValueVSchema], default: [] },
-    createdAt: { type: Date, default: Date.now, index: true },
+    created_date: { type: Date, default: Date.now, index: true },
   },
   { timestamps: true },
 );

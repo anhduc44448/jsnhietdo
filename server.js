@@ -3,6 +3,10 @@ import mongoose from "mongoose";
 
 import definitionRoutes from "./routes/definitions.js";
 import recordRoutes from "./routes/records.js";
+import userRoutes from "./routes/users.js";
+
+import swaggerUi from "swagger-ui-express";
+import swaggerJsdoc from "swagger-jsdoc";
 
 const app = express();
 
@@ -13,8 +17,29 @@ mongoose
   .then(() => console.log("MongoDB connected to nhietdo"))
   .catch((err) => console.log(err));
 
-app.use("/api/Sensors", definitionRoutes);
-app.use("/api/Sensors", recordRoutes);
+app.use("/api/sensors/definitions", definitionRoutes);
+app.use("/api/sensors/records", recordRoutes);
+app.use("/api/sensors/users", userRoutes);
+
+const options = {
+  definition: {
+    openapi: "3.0.0",
+    info: {
+      title: "Sensor API",
+      version: "1.0.0",
+    },
+    servers: [
+      {
+        url: "http://localhost:3000",
+      },
+    ],
+  },
+  apis: ["./routes/*.js"],
+};
+
+const swaggerSpec = swaggerJsdoc(options);
+
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.listen(3000, () => {
   console.log("Server running on port 3000");
